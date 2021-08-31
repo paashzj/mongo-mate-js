@@ -3,6 +3,10 @@ const config = require("./config");
 const shell = require("./tool/shell_util");
 module.exports = {
     start: function () {
+        console.log("platform is ", process.platform)
+        if (process.platform === "darwin") {
+            return
+        }
         let deployType = config.DEPLOY_TYPE;
         console.log("deploy type is ", deployType)
         if (deployType === "stand-alone") {
@@ -11,7 +15,7 @@ module.exports = {
             startConfig()
         } else if (deployType === "router") {
             startRouter()
-        } else {
+        } else if (deployType === "shard") {
             startShard()
         }
     }
