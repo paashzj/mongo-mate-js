@@ -15,4 +15,4 @@ RUN npm install
 
 WORKDIR /opt/sh/mongo
 
-CMD ["/usr/local/bin/dumb-init", "bash", "-vx", "/opt/sh/mongo/mate/scripts/start.sh"]
+CMD ["/usr/bin/dumb-init", "bash", "-vx", "/opt/sh/mongo/mate/scripts/start.sh"]
