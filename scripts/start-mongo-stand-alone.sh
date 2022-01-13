@@ -1,4 +1,5 @@
 #!/bin/bash
 
 mkdir -p /data/db
-nohup mongod --bind_ip_all >$MONGO_HOME/mongo.stdout.log 2>$MONGO_HOME/mongo.stderr.log &
+mkdir -p $MONGO_HOME/logs
+nohup mongod --bind_ip_all >>$MONGO_HOME/logs/mongo.stdout.log 2>>$MONGO_HOME/logs/mongo.stderr.log &
